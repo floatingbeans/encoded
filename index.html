@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="style.css">
+<h1>The <strong>BEANS</strong> Encryption Algorithm</h1>
+<input type="number" id="x" placeholder="Enter Multiplier"> </input>
+<input type="text" id="string" placeholder="Enter String"> 
+<br> <br>
+<button onclick="code()">Encode</button> <br> <br>
+<h3>Result:</h3>
+<textarea id="rizz"></textarea>
+<div id="none"></div>
+
+<script>
+  function code() {
+    let x = document.getElementById("x").value
+if(isNaN(x)) {
+    console.log("ERROR: Multiplier Value Must be a Number!")
+} 
+else {
+main()    
+}
+
+function main() {
+   
+const test = document.getElementById("rizz")
+test.replaceWith(" ")
+
+var full = " "
+const v = x
+let string = document.getElementById('string').value
+for(let i = 0; i <= string.length - 1; i++) {
+    x = `${+x * string.length}` 
+    var full = full + `${v};${x};${string.charCodeAt(i)}--- `
+}
+
+const newd = document.createElement("textarea");
+  const newcon = document.createTextNode(full)
+
+  newd.id = "rizz"
+  
+  newd.appendChild(newcon);
+
+  const cd = document.getElementById(`none`);
+  document.body.insertBefore(newd, cd);
+  
+}
+  }
+</script>
