@@ -27,8 +27,11 @@ var full = " "
 const v = x
 let string = document.getElementById('string').value
 for(let i = 0; i <= string.length - 1; i++) {
-    x = `${+x * string.length}` 
-    var full = full + `${v};${x};${string.charCodeAt(i)}--- `
+  var ih = i + 1
+  var sl = `${Math.floor(string.length / ih )}`
+    x = `${+x * sl}` 
+    var zeep = `${string.charCodeAt(i)}`
+    var full = full + `${v^i};${x};${zeep^i * 5}--- `
 }
 
 const newd = document.createElement("textarea");
